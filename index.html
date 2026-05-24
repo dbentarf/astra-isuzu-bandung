@@ -13,53 +13,71 @@
     <!-- Tailwind CSS untuk Desain Responsif & Modern (Gratis via CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Google untuk Tampilan Profesional -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Google Modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Animate CSS untuk animasi smooth -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     
     <style>
         body { 
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', 'Sora', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f8ff 100%);
         }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
         }
-        .gradient-primary {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        /* Warna Biru Permata */
+        .gradient-blue-gem {
+            background: linear-gradient(135deg, #0369a1 0%, #0284c7 50%, #0ea5e9 100%);
         }
-        .gradient-dark {
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+        .gradient-blue-light {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+        }
+        .gradient-blue-dark {
+            background: linear-gradient(135deg, #0c2340 0%, #0a4a7a 100%);
+        }
+        .text-blue-gem {
+            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .accent-blue-gem {
+            color: #0369a1;
         }
         .card-hover {
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateY(0);
         }
         .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(3, 105, 161, 0.12);
         }
-        .btn-premium {
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+        .btn-gem {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(3, 105, 161, 0.2);
         }
-        .btn-premium:hover {
+        .btn-gem:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+            box-shadow: 0 8px 25px rgba(3, 105, 161, 0.3);
         }
-        .badge-premium {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+        .badge-gem {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: white;
+            font-weight: 600;
+        }
+        .badge-accent {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
             color: white;
             font-weight: 600;
         }
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            letter-spacing: -0.5px;
         }
         .product-image {
             object-fit: cover;
@@ -67,9 +85,14 @@
             height: 100%;
         }
         .trust-badge {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(3, 105, 161, 0.1);
+        }
+        .trust-badge-dark {
+            background: rgba(12, 35, 64, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(3, 105, 161, 0.15);
         }
         .scroll-smooth {
             scroll-behavior: smooth;
@@ -87,222 +110,232 @@
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out;
         }
+        .border-gem {
+            border: 1px solid rgba(3, 105, 161, 0.15);
+        }
+        .text-light {
+            color: #475569;
+        }
     </style>
 </head>
-<body class="bg-white text-gray-900 antialiased scroll-smooth">
+<body class="antialiased scroll-smooth">
 
-    <!-- 1. HEADER & TOP BAR PREMIUM -->
-    <header class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="gradient-primary text-white text-xs py-3 px-4">
+    <!-- 1. HEADER & TOP BAR MODERN -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gem shadow-sm">
+        <div class="gradient-blue-gem text-white text-xs py-3 px-4">
             <div class="container mx-auto flex justify-between items-center">
-                <span class="font-semibold">🏆 Dealer Resmi Isuzu Terpercaya | Promo Spesial Tersedia</span>
-                <a href="https://wa.me/081228229366?text=Halo%20Sales%20PT%20Astra%20Isuzu%20Bandung" class="hover:underline font-bold text-yellow-200">📞 0812-2822-9366</a>
+                <span class="font-semibold tracking-wide">✨ Dealer Resmi Isuzu | Promo Spesial Bulan Ini</span>
+                <a href="https://wa.me/081228229366?text=Halo%20Sales%20PT%20Astra%20Isuzu%20Bandung" class="hover:opacity-80 font-semibold transition">📞 0812-2822-9366</a>
             </div>
         </div>
-        <nav class="container mx-auto px-4 py-5 flex justify-between items-center">
-            <!-- Logo Brand Premium -->
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo Brand Modern -->
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
-                    <span class="text-white font-bold text-lg">⧗</span>
+                <div class="gradient-blue-gem w-12 h-12 rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="text-white font-bold text-xl">A</span>
                 </div>
                 <div>
-                    <div class="text-xl font-bold text-gray-900">ASTRA ISUZU</div>
-                    <div class="text-xs text-gray-500 font-semibold">BANDUNG</div>
+                    <div class="text-lg font-bold accent-blue-gem">ASTRA ISUZU</div>
+                    <div class="text-xs text-light font-medium">Bandung</div>
                 </div>
             </div>
             <!-- Menu Navigasi -->
-            <ul class="hidden md:flex space-x-8 font-medium text-sm text-gray-700">
-                <li><a href="#home" class="hover:text-red-600 transition duration-300">Beranda</a></li>
-                <li><a href="#produk" class="hover:text-red-600 transition duration-300">Produk</a></li>
-                <li><a href="#harga" class="hover:text-red-600 transition duration-300">Harga</a></li>
-                <li><a href="#keunggulan" class="hover:text-red-600 transition duration-300">Keunggulan</a></li>
-                <li><a href="#kontak" class="hover:text-red-600 transition duration-300">Kontak</a></li>
+            <ul class="hidden md:flex space-x-8 font-medium text-sm text-light">
+                <li><a href="#home" class="hover:accent-blue-gem transition duration-300">Beranda</a></li>
+                <li><a href="#produk" class="hover:accent-blue-gem transition duration-300">Produk</a></li>
+                <li><a href="#harga" class="hover:accent-blue-gem transition duration-300">Harga</a></li>
+                <li><a href="#keunggulan" class="hover:accent-blue-gem transition duration-300">Keunggulan</a></li>
+                <li><a href="#kontak" class="hover:accent-blue-gem transition duration-300">Kontak</a></li>
             </ul>
-            <!-- Tombol CTA Premium -->
-            <a href="https://wa.me/081228229366?text=Saya%20ingin%20tanya%20simulasi%20kredit%20Isuzu" class="btn-premium text-white font-bold px-6 py-2.5 rounded-lg text-sm shadow-lg">
+            <!-- Tombol CTA Modern -->
+            <a href="https://wa.me/081228229366?text=Saya%20ingin%20tanya%20simulasi%20kredit%20Isuzu" class="btn-gem text-white font-semibold px-6 py-2.5 rounded-lg text-sm hidden md:inline-block">
                 Konsultasi Gratis
             </a>
         </nav>
     </header>
 
-    <!-- 2. HERO BANNER PREMIUM -->
-    <section id="home" class="relative gradient-primary text-white py-32 md:py-40 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80');"></div>
-        <div class="absolute inset-0 gradient-dark opacity-60"></div>
+    <!-- 2. HERO BANNER MODERN PREMIUM -->
+    <section id="home" class="relative gradient-blue-light text-gray-900 py-32 md:py-40 overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 gradient-blue-gem opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 opacity-10 rounded-full blur-3xl"></div>
         
-        <div class="relative container mx-auto px-4 max-w-5xl">
+        <div class="relative container mx-auto px-4 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
                 <div class="fade-in-up">
-                    <div class="inline-block badge-premium px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <div class="inline-block badge-gem px-4 py-2 rounded-full text-sm font-semibold mb-6">
                         ⭐ DEALER RESMI PT ISUZU ASTRA MOTOR
                     </div>
-                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-white">
-                        Solusi Armada Truk Berkualitas Premium
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-blue-gem">
+                        Armada Truk Berkualitas Tinggi
                     </h1>
-                    <p class="text-lg text-gray-100 mb-8 leading-relaxed">
-                        Dapatkan truk Isuzu terbaik dengan harga kompetitif, cicilan ringan, dan layanan purna jual terpercaya. Lebih dari 500+ pelanggan puas di Bandung & Jawa Barat.
+                    <p class="text-lg text-light mb-8 leading-relaxed font-light">
+                        Solusi transportasi terpercaya untuk bisnis Anda. Dapatkan harga kompetitif, cicilan ringan, dan layanan purna jual kelas dunia.
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <a href="https://wa.me/081228229366?text=Halo%20saya%20ingin%20tanya%20promo%20Isuzu%20terbaru" class="btn-premium text-white font-bold px-8 py-4 rounded-lg text-center transition duration-300 shadow-lg">
-                            💬 Chat WhatsApp Sekarang
+                        <a href="https://wa.me/081228229366?text=Halo%20saya%20ingin%20tanya%20promo%20Isuzu%20terbaru" class="btn-gem text-white font-semibold px-8 py-4 rounded-lg text-center transition duration-300 shadow-lg">
+                            💬 Hubungi Kami
                         </a>
-                        <a href="#produk" class="bg-white hover:bg-gray-100 text-red-600 font-bold px-8 py-4 rounded-lg text-center transition duration-300">
+                        <a href="#produk" class="border-2 border-blue-400 text-blue-600 hover:bg-blue-50 font-semibold px-8 py-4 rounded-lg text-center transition duration-300">
                             Lihat Produk →
                         </a>
                     </div>
-                    <div class="flex flex-wrap gap-6 mt-10 pt-8 border-t border-white border-opacity-20">
+                    <div class="flex flex-wrap gap-8 mt-12 pt-10 border-t-2 border-blue-200">
                         <div>
-                            <div class="text-3xl font-bold">500+</div>
-                            <div class="text-sm text-gray-200">Pelanggan Puas</div>
+                            <div class="text-3xl font-bold accent-blue-gem">500+</div>
+                            <div class="text-sm text-light font-medium">Pelanggan Puas</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold">10+</div>
-                            <div class="text-sm text-gray-200">Tahun Berpengalaman</div>
+                            <div class="text-3xl font-bold accent-blue-gem">10+</div>
+                            <div class="text-sm text-light font-medium">Tahun Berpengalaman</div>
                         </div>
                         <div>
-                            <div class="text-3xl font-bold">24/7</div>
-                            <div class="text-sm text-gray-200">Layanan Customer</div>
+                            <div class="text-3xl font-bold accent-blue-gem">24/7</div>
+                            <div class="text-sm text-light font-medium">Layanan Terbaik</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Hero Image -->
-                <div class="hidden md:flex justify-center">
-                    <img src="https://images.unsplash.com/photo-1533473359331-35ad069051c5?auto=format&fit=crop&w=600&q=80" alt="Isuzu Premium" class="rounded-2xl shadow-2xl max-w-md w-full object-cover" />
+                <div class="hidden md:flex justify-center fade-in-up">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-0 gradient-blue-gem opacity-20 rounded-3xl blur-2xl"></div>
+                        <img src="https://images.unsplash.com/photo-1533473359331-35ad069051c5?auto=format&fit=crop&w=600&q=80" alt="Isuzu Premium" class="relative rounded-3xl shadow-2xl w-full object-cover border-4 border-white" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. PRODUK PREMIUM dengan Foto Asli -->
-    <section id="produk" class="py-20 bg-gray-50">
+    <!-- 3. PRODUK MODERN dengan Foto Asli -->
+    <section id="produk" class="py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 fade-in-up">
-                <h2 class="section-title mb-4">Lineup Produk Isuzu Premium</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Pilih unit yang sesuai kebutuhan bisnis Anda dengan teknologi terdepan dan performa handal</p>
+                <h2 class="section-title text-blue-gem mb-4">Lineup Produk Isuzu</h2>
+                <p class="text-light text-lg max-w-2xl mx-auto font-light">Pilih unit yang sesuai kebutuhan bisnis Anda dengan teknologi terdepan dan performa handal</p>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Product 1: Isuzu Traga -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-56 bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581599810700-f5765e0d8aaf?auto=format&fit=crop&w=500&q=80" alt="Isuzu Traga" class="product-image hover:scale-110 transition duration-300" />
-                        <div class="absolute top-4 right-4 badge-premium px-3 py-1 rounded-full text-xs font-bold">NEW</div>
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border-gem shadow-sm hover:shadow-xl">
+                    <div class="relative h-56 bg-gradient-blue-light overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581599810700-f5765e0d8aaf?auto=format&fit=crop&w=500&q=80" alt="Isuzu Traga" class="product-image hover:scale-110 transition duration-500" />
+                        <div class="absolute top-4 right-4 badge-accent px-3 py-1.5 rounded-full text-xs font-bold">POPULER</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-900 mb-2">Isuzu Traga</h3>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">Pick Up Premium Ekstra Luas</p>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Isuzu Traga</h3>
+                        <p class="text-sm text-light mb-4 font-light">Pick Up Premium Ekstra Luas</p>
                         
-                        <div class="space-y-2 mb-4 text-sm">
+                        <div class="space-y-2 mb-4 text-sm bg-blue-50 p-3 rounded-lg">
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Kapasitas Muat:</span>
-                                <span class="font-semibold">1.5 Ton</span>
+                                <span class="text-light">Kapasitas Muat:</span>
+                                <span class="font-semibold text-gray-900">1.5 Ton</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Mesin:</span>
-                                <span class="font-semibold">2.5L Diesel</span>
+                                <span class="text-light">Mesin:</span>
+                                <span class="font-semibold text-gray-900">2.5L Diesel</span>
                             </div>
                         </div>
 
-                        <div class="mb-4 pb-4 border-t border-gray-100">
-                            <div class="text-red-600 font-bold text-lg mt-4">Mulai Rp 200 Jutaan</div>
+                        <div class="mb-4 pb-4 border-t-2 border-blue-100">
+                            <div class="accent-blue-gem font-bold text-lg mt-4">Rp 200-220 Jt</div>
                         </div>
                         
-                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20Traga%20dan%20ingin%20tahu%20harga%20spesial" class="btn-premium text-white font-semibold w-full py-3 rounded-lg text-center">
-                            Cek Promo Khusus
+                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20Traga" class="btn-gem text-white font-semibold w-full py-3 rounded-lg text-center">
+                            Cek Promo
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 2: Isuzu Elf -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-56 bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" alt="Isuzu Elf" class="product-image hover:scale-110 transition duration-300" />
-                        <div class="absolute top-4 right-4 badge-premium px-3 py-1 rounded-full text-xs font-bold">POPULER</div>
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border-gem shadow-sm hover:shadow-xl">
+                    <div class="relative h-56 bg-gradient-blue-light overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=500&q=80" alt="Isuzu Elf" class="product-image hover:scale-110 transition duration-500" />
+                        <div class="absolute top-4 right-4 badge-gem px-3 py-1.5 rounded-full text-xs font-bold">BEST SELLER</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-900 mb-2">Isuzu Elf</h3>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">Truk Logistik Paling Dipercaya</p>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Isuzu Elf</h3>
+                        <p class="text-sm text-light mb-4 font-light">Truk Logistik Paling Dipercaya</p>
                         
-                        <div class="space-y-2 mb-4 text-sm">
+                        <div class="space-y-2 mb-4 text-sm bg-blue-50 p-3 rounded-lg">
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Kapasitas Muat:</span>
-                                <span class="font-semibold">3-5 Ton</span>
+                                <span class="text-light">Kapasitas Muat:</span>
+                                <span class="font-semibold text-gray-900">3-5 Ton</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Roda:</span>
-                                <span class="font-semibold">4 & 6 Roda</span>
+                                <span class="text-light">Roda:</span>
+                                <span class="font-semibold text-gray-900">4 & 6 Roda</span>
                             </div>
                         </div>
 
-                        <div class="mb-4 pb-4 border-t border-gray-100">
-                            <div class="text-red-600 font-bold text-lg mt-4">Hubungi Sales</div>
+                        <div class="mb-4 pb-4 border-t-2 border-blue-100">
+                            <div class="accent-blue-gem font-bold text-lg mt-4">Hubungi Sales</div>
                         </div>
                         
-                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20Elf%20dan%20ingin%20tahu%20harga%20spesial" class="btn-premium text-white font-semibold w-full py-3 rounded-lg text-center">
+                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20Elf" class="btn-gem text-white font-semibold w-full py-3 rounded-lg text-center">
                             Info Lengkap
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 3: Isuzu Giga -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-56 bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500&q=80" alt="Isuzu Giga" class="product-image hover:scale-110 transition duration-300" />
-                        <div class="absolute top-4 right-4 badge-premium px-3 py-1 rounded-full text-xs font-bold">POWER</div>
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border-gem shadow-sm hover:shadow-xl">
+                    <div class="relative h-56 bg-gradient-blue-light overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=500&q=80" alt="Isuzu Giga" class="product-image hover:scale-110 transition duration-500" />
+                        <div class="absolute top-4 right-4 badge-accent px-3 py-1.5 rounded-full text-xs font-bold">POWER</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-900 mb-2">Isuzu Giga</h3>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">Truk Medium Tugas Berat</p>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Isuzu Giga</h3>
+                        <p class="text-sm text-light mb-4 font-light">Truk Medium Tugas Berat</p>
                         
-                        <div class="space-y-2 mb-4 text-sm">
+                        <div class="space-y-2 mb-4 text-sm bg-blue-50 p-3 rounded-lg">
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Kapasitas Muat:</span>
-                                <span class="font-semibold">10+ Ton</span>
+                                <span class="text-light">Kapasitas Muat:</span>
+                                <span class="font-semibold text-gray-900">10+ Ton</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Mesin:</span>
-                                <span class="font-semibold">6HE1 Diesel</span>
+                                <span class="text-light">Mesin:</span>
+                                <span class="font-semibold text-gray-900">6HE1 Diesel</span>
                             </div>
                         </div>
 
-                        <div class="mb-4 pb-4 border-t border-gray-100">
-                            <div class="text-red-600 font-bold text-lg mt-4">Hubungi Sales</div>
+                        <div class="mb-4 pb-4 border-t-2 border-blue-100">
+                            <div class="accent-blue-gem font-bold text-lg mt-4">Hubungi Sales</div>
                         </div>
                         
-                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20Giga%20dan%20ingin%20tahu%20harga%20spesial" class="btn-premium text-white font-semibold w-full py-3 rounded-lg text-center">
+                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20Giga" class="btn-gem text-white font-semibold w-full py-3 rounded-lg text-center">
                             Minta Penawaran
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 4: Isuzu D-Max -->
-                <div class="card-hover bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative h-56 bg-gray-200 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1609708536965-38f80113dba9?auto=format&fit=crop&w=500&q=80" alt="Isuzu D-Max" class="product-image hover:scale-110 transition duration-300" />
-                        <div class="absolute top-4 right-4 badge-premium px-3 py-1 rounded-full text-xs font-bold">4x4</div>
+                <div class="card-hover bg-white rounded-2xl overflow-hidden border-gem shadow-sm hover:shadow-xl">
+                    <div class="relative h-56 bg-gradient-blue-light overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1609708536965-38f80113dba9?auto=format&fit=crop&w=500&q=80" alt="Isuzu D-Max" class="product-image hover:scale-110 transition duration-500" />
+                        <div class="absolute top-4 right-4 badge-accent px-3 py-1.5 rounded-full text-xs font-bold">4x4</div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-bold text-xl text-gray-900 mb-2">Isuzu D-Max</h3>
-                        <p class="text-sm text-gray-600 mb-4 font-medium">Double Cabin Ketangguhan Maksimal</p>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Isuzu D-Max</h3>
+                        <p class="text-sm text-light mb-4 font-light">Double Cabin Ketangguhan Maksimal</p>
                         
-                        <div class="space-y-2 mb-4 text-sm">
+                        <div class="space-y-2 mb-4 text-sm bg-blue-50 p-3 rounded-lg">
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Kapasitas Penumpang:</span>
-                                <span class="font-semibold">5 Orang</span>
+                                <span class="text-light">Penumpang:</span>
+                                <span class="font-semibold text-gray-900">5 Orang</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Traksi:</span>
-                                <span class="font-semibold">4WD Premium</span>
+                                <span class="text-light">Traksi:</span>
+                                <span class="font-semibold text-gray-900">4WD Premium</span>
                             </div>
                         </div>
 
-                        <div class="mb-4 pb-4 border-t border-gray-100">
-                            <div class="text-red-600 font-bold text-lg mt-4">Hubungi Sales</div>
+                        <div class="mb-4 pb-4 border-t-2 border-blue-100">
+                            <div class="accent-blue-gem font-bold text-lg mt-4">Hubungi Sales</div>
                         </div>
                         
-                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20D-Max%20dan%20ingin%20tahu%20harga%20spesial" class="btn-premium text-white font-semibold w-full py-3 rounded-lg text-center">
+                        <a href="https://wa.me/081228229366?text=Saya%20tertarik%20dengan%20Isuzu%20D-Max" class="btn-gem text-white font-semibold w-full py-3 rounded-lg text-center">
                             Dapatkan Penawaran
                         </a>
                     </div>
@@ -311,71 +344,71 @@
         </div>
     </section>
 
-    <!-- 4. HARGA & TABEL OTR PREMIUM -->
-    <section id="harga" class="py-20 bg-white">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <div class="text-center mb-12 fade-in-up">
-                <h2 class="section-title mb-4">Daftar Harga Kompetitif</h2>
-                <p class="text-gray-600">Harga OTR (On The Road) terbaik di wilayah Bandung & Jawa Barat</p>
+    <!-- 4. HARGA & TABEL OTR MODERN -->
+    <section id="harga" class="py-24 gradient-blue-light">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="section-title text-blue-gem mb-4">Daftar Harga Kompetitif</h2>
+                <p class="text-light text-lg font-light">Harga OTR (On The Road) terbaik di wilayah Bandung & Jawa Barat</p>
             </div>
             
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+            <div class="bg-white rounded-3xl shadow-lg border-gem overflow-hidden">
                 <table class="w-full text-left">
                     <thead>
-                        <tr class="gradient-primary text-white">
-                            <th class="p-6 font-bold">Tipe Unit Isuzu</th>
-                            <th class="p-6 font-bold">Spesifikasi</th>
-                            <th class="p-6 font-bold text-center">Harga OTR</th>
-                            <th class="p-6 font-bold text-center">Aksi</th>
+                        <tr class="gradient-blue-gem text-white">
+                            <th class="p-6 font-semibold">Tipe Unit Isuzu</th>
+                            <th class="p-6 font-semibold">Spesifikasi</th>
+                            <th class="p-6 font-semibold text-center">Harga OTR</th>
+                            <th class="p-6 font-semibold text-center">Aksi</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-gray-100">
-                        <tr class="hover:bg-gray-50 transition duration-200">
+                    <tbody class="divide-y divide-blue-100">
+                        <tr class="hover:bg-blue-50 transition duration-200">
                             <td class="p-6 font-semibold text-gray-900">Isuzu Traga</td>
-                            <td class="p-6 text-sm text-gray-600">Pick Up 1.5T, 2.5L Diesel</td>
-                            <td class="p-6 text-center"><span class="font-bold text-red-600 text-lg">Rp 200-220 Jt</span></td>
+                            <td class="p-6 text-sm text-light">Pick Up 1.5T, 2.5L Diesel</td>
+                            <td class="p-6 text-center"><span class="font-bold accent-blue-gem text-lg">Rp 200-220 Jt</span></td>
                             <td class="p-6 text-center">
-                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20terbaru%20Isuzu%20Traga" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition">
+                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20terbaru%20Isuzu%20Traga" class="inline-block bg-gradient-blue-gem text-white px-4 py-2 rounded-lg font-semibold text-sm transition hover:shadow-lg">
                                     Cek Harga
                                 </a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition duration-200">
+                        <tr class="hover:bg-blue-50 transition duration-200">
                             <td class="p-6 font-semibold text-gray-900">Isuzu Elf NLR</td>
-                            <td class="p-6 text-sm text-gray-600">4 Roda, 3T Kapasitas</td>
-                            <td class="p-6 text-center"><span class="font-bold text-red-600 text-lg">Hubungi Sales</span></td>
+                            <td class="p-6 text-sm text-light">4 Roda, 3T Kapasitas</td>
+                            <td class="p-6 text-center"><span class="font-bold accent-blue-gem text-lg">Hubungi Sales</span></td>
                             <td class="p-6 text-center">
-                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20Elf%20NLR" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition">
+                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20Elf%20NLR" class="inline-block bg-gradient-blue-gem text-white px-4 py-2 rounded-lg font-semibold text-sm transition hover:shadow-lg">
                                     Cek Harga
                                 </a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition duration-200">
+                        <tr class="hover:bg-blue-50 transition duration-200">
                             <td class="p-6 font-semibold text-gray-900">Isuzu Elf NMR</td>
-                            <td class="p-6 text-sm text-gray-600">6 Roda, 5T Kapasitas</td>
-                            <td class="p-6 text-center"><span class="font-bold text-red-600 text-lg">Hubungi Sales</span></td>
+                            <td class="p-6 text-sm text-light">6 Roda, 5T Kapasitas</td>
+                            <td class="p-6 text-center"><span class="font-bold accent-blue-gem text-lg">Hubungi Sales</span></td>
                             <td class="p-6 text-center">
-                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20Elf%20NMR" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition">
+                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20Elf%20NMR" class="inline-block bg-gradient-blue-gem text-white px-4 py-2 rounded-lg font-semibold text-sm transition hover:shadow-lg">
                                     Cek Harga
                                 </a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition duration-200">
+                        <tr class="hover:bg-blue-50 transition duration-200">
                             <td class="p-6 font-semibold text-gray-900">Isuzu Giga</td>
-                            <td class="p-6 text-sm text-gray-600">Medium Truck, 10+ Ton</td>
-                            <td class="p-6 text-center"><span class="font-bold text-red-600 text-lg">Hubungi Sales</span></td>
+                            <td class="p-6 text-sm text-light">Medium Truck, 10+ Ton</td>
+                            <td class="p-6 text-center"><span class="font-bold accent-blue-gem text-lg">Hubungi Sales</span></td>
                             <td class="p-6 text-center">
-                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20Giga" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition">
+                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20Giga" class="inline-block bg-gradient-blue-gem text-white px-4 py-2 rounded-lg font-semibold text-sm transition hover:shadow-lg">
                                     Cek Harga
                                 </a>
                             </td>
                         </tr>
-                        <tr class="hover:bg-gray-50 transition duration-200">
+                        <tr class="hover:bg-blue-50 transition duration-200">
                             <td class="p-6 font-semibold text-gray-900">Isuzu D-Max</td>
-                            <td class="p-6 text-sm text-gray-600">Double Cabin 4WD, 5 Seat</td>
-                            <td class="p-6 text-center"><span class="font-bold text-red-600 text-lg">Hubungi Sales</span></td>
+                            <td class="p-6 text-sm text-light">Double Cabin 4WD, 5 Seat</td>
+                            <td class="p-6 text-center"><span class="font-bold accent-blue-gem text-lg">Hubungi Sales</span></td>
                             <td class="p-6 text-center">
-                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20D-Max" class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold text-sm transition">
+                                <a href="https://wa.me/081228229366?text=Tanya%20harga%20Isuzu%20D-Max" class="inline-block bg-gradient-blue-gem text-white px-4 py-2 rounded-lg font-semibold text-sm transition hover:shadow-lg">
                                     Cek Harga
                                 </a>
                             </td>
@@ -384,72 +417,72 @@
                 </table>
             </div>
 
-            <div class="mt-8 p-6 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
-                <p class="text-sm text-gray-700"><strong>* Catatan:</strong> Harga OTR (On The Road) termasuk pajak dan asuransi. Harga dapat berubah sewaktu-waktu. Dapatkan diskon khusus dan cicilan ringan dengan hubungi sales kami sekarang!</p>
+            <div class="mt-8 p-6 bg-white rounded-2xl border-l-4 border-blue-500 shadow-sm">
+                <p class="text-sm text-light font-light"><strong class="text-gray-900">Catatan:</strong> Harga OTR (On The Road) termasuk pajak dan asuransi. Dapatkan diskon khusus dan cicilan ringan dengan hubungi sales kami sekarang!</p>
             </div>
         </div>
     </section>
 
-    <!-- 5. KEUNGGULAN PREMIUM -->
-    <section id="keunggulan" class="py-20 gradient-dark text-white">
+    <!-- 5. KEUNGGULAN MODERN -->
+    <section id="keunggulan" class="py-24 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 fade-in-up">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Mengapa Memilih Kami?</h2>
-                <p class="text-gray-200 text-lg max-w-2xl mx-auto">Kami adalah dealer resmi terpercaya dengan layanan terbaik di Bandung</p>
+                <h2 class="section-title text-blue-gem mb-4">Mengapa Memilih Kami?</h2>
+                <p class="text-light text-lg max-w-2xl mx-auto font-light">Layanan terbaik dengan standar internasional</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="card-hover bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
+                <div class="card-hover bg-gradient-blue-light trust-badge-dark p-8 rounded-2xl border-gem">
                     <div class="text-5xl mb-4">💰</div>
-                    <h3 class="text-2xl font-bold mb-3">Cicilan Ringan</h3>
-                    <p class="text-gray-200 leading-relaxed">
-                        Paket pembiayaan fleksibel dengan DP mulai dari 10%, tenor hingga 60 bulan, dan bunga kompetitif dari lembaga keuangan terpercaya.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Cicilan Ringan</h3>
+                    <p class="text-light font-light leading-relaxed">
+                        Paket pembiayaan fleksibel dengan DP mulai dari 10%, tenor hingga 60 bulan, dan bunga kompetitif.
                     </p>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="card-hover bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
+                <div class="card-hover bg-gradient-blue-light trust-badge-dark p-8 rounded-2xl border-gem">
                     <div class="text-5xl mb-4">⚡</div>
-                    <h3 class="text-2xl font-bold mb-3">Proses Cepat</h3>
-                    <p class="text-gray-200 leading-relaxed">
-                        Approval kredit hanya 24 jam, proses transparan, dan kami siap membantu dari awal hingga kendaraan sampai ke tangan Anda.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Proses Cepat</h3>
+                    <p class="text-light font-light leading-relaxed">
+                        Approval kredit hanya 24 jam, proses transparan, dan kami siap membantu dari awal hingga pengiriman.
                     </p>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="card-hover bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
+                <div class="card-hover bg-gradient-blue-light trust-badge-dark p-8 rounded-2xl border-gem">
                     <div class="text-5xl mb-4">🛠️</div>
-                    <h3 class="text-2xl font-bold mb-3">After Sales Service</h3>
-                    <p class="text-gray-200 leading-relaxed">
-                        Layanan purna jual lengkap, spare part original, bengkel resmi, dan teknisi bersertifikat siap melayani 24/7.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">After Sales Service</h3>
+                    <p class="text-light font-light leading-relaxed">
+                        Layanan purna jual lengkap, spare part original, bengkel resmi, dan teknisi bersertifikat 24/7.
                     </p>
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="card-hover bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
+                <div class="card-hover bg-gradient-blue-light trust-badge-dark p-8 rounded-2xl border-gem">
                     <div class="text-5xl mb-4">🎨</div>
-                    <h3 class="text-2xl font-bold mb-3">Karoseri Custom</h3>
-                    <p class="text-gray-200 leading-relaxed">
-                        Layanan custom karoseri tersedia - Box, Bak, Dump truck, Tangki, dan design sesuai kebutuhan bisnis Anda.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Karoseri Custom</h3>
+                    <p class="text-light font-light leading-relaxed">
+                        Layanan custom karoseri - Box, Bak, Dump truck, Tangki, sesuai kebutuhan bisnis Anda.
                     </p>
                 </div>
 
                 <!-- Feature 5 -->
-                <div class="card-hover bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
+                <div class="card-hover bg-gradient-blue-light trust-badge-dark p-8 rounded-2xl border-gem">
                     <div class="text-5xl mb-4">🏆</div>
-                    <h3 class="text-2xl font-bold mb-3">Terpercaya 10+ Tahun</h3>
-                    <p class="text-gray-200 leading-relaxed">
-                        Pengalaman panjang melayani ribuan pelanggan di Bandung, Cimahi, Sumedang, dan seluruh Jawa Barat.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Terpercaya 10+ Tahun</h3>
+                    <p class="text-light font-light leading-relaxed">
+                        Pengalaman melayani ribuan pelanggan di Bandung, Cimahi, Sumedang, dan seluruh Jawa Barat.
                     </p>
                 </div>
 
                 <!-- Feature 6 -->
-                <div class="card-hover bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
+                <div class="card-hover bg-gradient-blue-light trust-badge-dark p-8 rounded-2xl border-gem">
                     <div class="text-5xl mb-4">📞</div>
-                    <h3 class="text-2xl font-bold mb-3">Customer Support 24/7</h3>
-                    <p class="text-gray-200 leading-relaxed">
-                        Tim customer service siap membantu kapan saja melalui WhatsApp, telepon, atau datang langsung ke showroom kami.
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Customer Support 24/7</h3>
+                    <p class="text-light font-light leading-relaxed">
+                        Tim customer service siap membantu kapan saja melalui WhatsApp, telepon, atau showroom kami.
                     </p>
                 </div>
             </div>
@@ -457,49 +490,49 @@
     </section>
 
     <!-- 6. TESTIMONI PELANGGAN -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-24 gradient-blue-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 fade-in-up">
-                <h2 class="section-title mb-4">Kepuasan Pelanggan</h2>
-                <p class="text-gray-600">Ribuan pelanggan puas telah membuktikan kualitas layanan kami</p>
+                <h2 class="section-title text-blue-gem mb-4">Kepuasan Pelanggan</h2>
+                <p class="text-light text-lg font-light">Ribuan pelanggan puas telah membuktikan kualitas layanan kami</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Testimoni 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-gem card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
                     </div>
-                    <p class="text-gray-700 mb-4 italic">"Sangat puas dengan pelayanan PT Astra Isuzu. Proses cicilan lancar dan mobilnya performa bagus. Merekomendasikan ke teman-teman!"</p>
+                    <p class="text-light font-light mb-4 italic">"Sangat puas dengan pelayanan PT Astra Isuzu. Proses cicilan lancar dan mobilnya performa bagus."</p>
                     <div class="font-semibold text-gray-900">Budi Santoso</div>
-                    <div class="text-sm text-gray-600">Pemilik PT Logistik Jaya, Bandung</div>
+                    <div class="text-sm accent-blue-gem font-medium">Pemilik PT Logistik Jaya</div>
                 </div>
 
                 <!-- Testimoni 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-gem card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
                     </div>
-                    <p class="text-gray-700 mb-4 italic">"Proses kredit sangat cepat, hanya 2 hari sudah bisa bawa pulang Isuzu Elf. Harga juga paling kompetitif dibanding dealer lain."</p>
+                    <p class="text-light font-light mb-4 italic">"Proses kredit sangat cepat, hanya 2 hari sudah bisa bawa pulang. Harga juga paling kompetitif!"</p>
                     <div class="font-semibold text-gray-900">Siti Rahmawati</div>
-                    <div class="text-sm text-gray-600">Pemilik CV Transportasi, Cimahi</div>
+                    <div class="text-sm accent-blue-gem font-medium">Pemilik CV Transportasi</div>
                 </div>
 
                 <!-- Testimoni 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 card-hover">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border-gem card-hover">
                     <div class="flex items-center mb-4">
                         <div class="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</div>
                     </div>
-                    <p class="text-gray-700 mb-4 italic">"Tim sales sangat profesional, detail soal mobil dijelasin dengan bagus. After sales service juga memuaskan, part original selalu tersedia."</p>
+                    <p class="text-light font-light mb-4 italic">"Tim sales profesional, after sales service memuaskan. Part original selalu tersedia."</p>
                     <div class="font-semibold text-gray-900">Rudi Hermawan</div>
-                    <div class="text-sm text-gray-600">Pengusaha Tambang, Sumedang</div>
+                    <div class="text-sm accent-blue-gem font-medium">Pengusaha Tambang</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 7. KONTAK & CTA AKHIR -->
-    <section id="kontak" class="gradient-primary text-white py-20">
+    <section id="kontak" class="gradient-blue-gem text-white py-24">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <!-- Info Kontak -->
@@ -509,46 +542,46 @@
                         <div class="flex items-start space-x-4">
                             <span class="text-3xl">📍</span>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">Lokasi Showroom</h4>
-                                <p class="text-gray-100">Bandung & Area Jawa Barat | Siap kunjungan lokasi Anda</p>
+                                <h4 class="font-semibold text-lg mb-1">Lokasi Showroom</h4>
+                                <p class="text-blue-100 font-light">Bandung & Area Jawa Barat | Siap kunjungan lokasi Anda</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
                             <span class="text-3xl">📞</span>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">Hubungi Langsung</h4>
-                                <p class="text-gray-100">WhatsApp: <a href="https://wa.me/081228229366" class="font-bold hover:underline">0812-2822-9366</a></p>
+                                <h4 class="font-semibold text-lg mb-1">Hubungi Langsung</h4>
+                                <p class="text-blue-100 font-light">WhatsApp: <a href="https://wa.me/081228229366" class="font-semibold hover:underline">0812-2822-9366</a></p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
                             <span class="text-3xl">⏰</span>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">Jam Kerja</h4>
-                                <p class="text-gray-100">Senin-Jumat: 08:00 - 17:00 WIB | Sabtu: 09:00 - 15:00 WIB | Minggu: Tutup</p>
+                                <h4 class="font-semibold text-lg mb-1">Jam Kerja</h4>
+                                <p class="text-blue-100 font-light">Senin-Jumat: 08:00 - 17:00 WIB | Sabtu: 09:00 - 15:00 WIB</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Contact Form Simple -->
-                <div class="bg-white bg-opacity-10 trust-badge p-8 rounded-xl">
-                    <h3 class="text-2xl font-bold mb-6">Minta Info & Penawaran</h3>
+                <!-- Contact Form Modern -->
+                <div class="bg-white bg-opacity-10 trust-badge p-8 rounded-2xl">
+                    <h3 class="text-2xl font-semibold mb-6">Minta Info Gratis</h3>
                     <form class="space-y-4">
-                        <input type="text" placeholder="Nama Lengkap" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white" />
+                        <input type="text" placeholder="Nama Lengkap" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white font-light" />
                         
-                        <input type="email" placeholder="Email / WhatsApp" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white" />
+                        <input type="email" placeholder="Email / WhatsApp" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white font-light" />
                         
-                        <select class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-white">
-                            <option class="bg-gray-900">Pilih Tipe Truk...</option>
-                            <option class="bg-gray-900">Isuzu Traga</option>
-                            <option class="bg-gray-900">Isuzu Elf</option>
-                            <option class="bg-gray-900">Isuzu Giga</option>
-                            <option class="bg-gray-900">Isuzu D-Max</option>
+                        <select class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-white font-light">
+                            <option class="bg-blue-900 text-white">Pilih Tipe Truk...</option>
+                            <option class="bg-blue-900 text-white">Isuzu Traga</option>
+                            <option class="bg-blue-900 text-white">Isuzu Elf</option>
+                            <option class="bg-blue-900 text-white">Isuzu Giga</option>
+                            <option class="bg-blue-900 text-white">Isuzu D-Max</option>
                         </select>
 
-                        <textarea placeholder="Pertanyaan Anda..." rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white placeholder-gray-200 focus:outline-none focus:ring-2 focus:ring-white"></textarea>
+                        <textarea placeholder="Pertanyaan Anda..." rows="4" class="w-full bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg p-3 text-white placeholder-blue-100 focus:outline-none focus:ring-2 focus:ring-white font-light"></textarea>
 
-                        <a href="https://wa.me/081228229366?text=Halo%20PT%20Astra%20Isuzu,%20saya%20ingin%20info%20lebih%20lanjut" class="w-full bg-white text-red-600 font-bold py-3 rounded-lg text-center hover:bg-gray-100 transition duration-300">
+                        <a href="https://wa.me/081228229366?text=Halo%20PT%20Astra%20Isuzu,%20saya%20ingin%20info%20lebih%20lanjut" class="w-full bg-white text-blue-600 font-semibold py-3 rounded-lg text-center hover:bg-blue-50 transition duration-300">
                             📨 Kirim via WhatsApp
                         </a>
                     </form>
@@ -557,47 +590,47 @@
         </div>
     </section>
 
-    <!-- 8. FOOTER PREMIUM -->
-    <footer class="gradient-dark text-gray-300 py-12">
+    <!-- 8. FOOTER MODERN -->
+    <footer class="gradient-blue-dark text-gray-300 py-12">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div>
-                    <div class="text-white font-bold text-lg mb-4">PT ASTRA ISUZU</div>
-                    <p class="text-sm">Dealer resmi Isuzu terpercaya melayani Bandung & Jawa Barat</p>
+                    <div class="text-white font-semibold text-lg mb-4">PT ASTRA ISUZU</div>
+                    <p class="text-sm font-light text-gray-400">Dealer resmi Isuzu terpercaya melayani Bandung & Jawa Barat</p>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Produk</h4>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="#produk" class="hover:text-white">Isuzu Traga</a></li>
-                        <li><a href="#produk" class="hover:text-white">Isuzu Elf</a></li>
-                        <li><a href="#produk" class="hover:text-white">Isuzu Giga</a></li>
-                        <li><a href="#produk" class="hover:text-white">Isuzu D-Max</a></li>
+                    <ul class="text-sm space-y-2 font-light">
+                        <li><a href="#produk" class="hover:text-white transition">Isuzu Traga</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Isuzu Elf</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Isuzu Giga</a></li>
+                        <li><a href="#produk" class="hover:text-white transition">Isuzu D-Max</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Layanan</h4>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="#harga" class="hover:text-white">Daftar Harga</a></li>
-                        <li><a href="#keunggulan" class="hover:text-white">Keunggulan</a></li>
-                        <li><a href="#kontak" class="hover:text-white">Kontak</a></li>
+                    <ul class="text-sm space-y-2 font-light">
+                        <li><a href="#harga" class="hover:text-white transition">Daftar Harga</a></li>
+                        <li><a href="#keunggulan" class="hover:text-white transition">Keunggulan</a></li>
+                        <li><a href="#kontak" class="hover:text-white transition">Kontak</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-semibold mb-4">Hubungi Kami</h4>
-                    <p class="text-sm mb-2">WhatsApp: 0812-2822-9366</p>
-                    <p class="text-sm">Bandung & Jawa Barat</p>
+                    <p class="text-sm font-light mb-2">WhatsApp: 0812-2822-9366</p>
+                    <p class="text-sm font-light text-gray-400">Bandung & Jawa Barat</p>
                 </div>
             </div>
 
-            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+            <div class="border-t border-blue-700 pt-8 text-center text-sm font-light">
                 <p>&copy; 2026 PT Astra Isuzu Bandung. All Rights Reserved.</p>
-                <p class="mt-2">Hak cipta merek & gambar milik PT Isuzu Astra Motor Indonesia</p>
+                <p class="mt-2 text-gray-400">Hak cipta merek & gambar milik PT Isuzu Astra Motor Indonesia</p>
             </div>
         </div>
     </footer>
 
-    <!-- FLOATING WHATSAPP BUTTON PREMIUM -->
-    <a href="https://wa.me/081228229366?text=Halo%20Sales%20PT%20Astra%20Isuzu%20Bandung,%20saya%20ingin%20tanya%20promo%20terbaru" target="_blank" class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition duration-300 hover:scale-110 z-40" title="Chat Sales via WhatsApp">
+    <!-- FLOATING WHATSAPP BUTTON MODERN -->
+    <a href="https://wa.me/081228229366?text=Halo%20Sales%20PT%20Astra%20Isuzu%20Bandung,%20saya%20ingin%20tanya%20promo%20terbaru" target="_blank" class="fixed bottom-8 right-8 gradient-blue-gem text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl transition duration-300 hover:scale-110 z-40 hover:shadow-3xl" title="Chat Sales via WhatsApp">
         💬
     </a>
 
